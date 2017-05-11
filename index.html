@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>我的第一个HTML页面</title>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+  <link rel="stylesheet" href="https://typo.sofi.sh/typo.css">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  
+  <style>
+  body{
+    padding-left:16px;
+  }
+  img{
+    max-width:100%;
+  }
+  </style>
 </head>
 <body>
-<p>这是内容</p>
-  <button>这是按钮！</button>
+<div id="content">
+  var markdown = `
+# 我的第一个博客
+
+## 作者：芳芳
+
+ > 每天进步一点点。
+
+今日学习内容：
+
+1.在git上建立了第一个仓库；
+
+2.学习到markdown的初步用法；
+
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494491182863&di=20d0d925113193112b928e13fbaec805&imgtype=0&src=http%3A%2F%2Fimg4q.duitang.com%2Fuploads%2Fblog%2F201408%2F28%2F20140828212148_yzCZF.thumb.700_0.jpeg" alt="">
+
+`
+  
+</div>
+  <script>
+    var markdown =  document.getElementById("content");
+    html = markdown.innerHTML;
+    var mark = marked(html);
+    markdown.innerHTML = mark;
+  </script>
+  
 </body>
 </html>
