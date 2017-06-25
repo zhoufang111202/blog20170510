@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{margin: 0;padding: 0;}
+	body{
+		font:8em "微软雅黑";
+		padding: 200px;
+	}
+	.wenzi{
+		margin: 0.2em;
+		color: #369;
+		position: relative;
+	}
+	.wenzi:before,.wenzi:after{
+		content:attr(data-wenzi);
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform-origin: left top;
+		transition: all 0.3s ease 0s;
+	}
+	.wenzi:before{
+		color:#fff;
+		z-index:3;
+		transform: rotateX(0deg) rotateY(-15deg) rotateZ(0deg);
+	}
+	.wenzi:after{
+		color: rgba(0,0,0,0.2);
+		transform: scale(1.1,1.1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+		z-index: 2;
+	}
+	.wenzi:hover:before{
+		color:#fafafa;
+		transform: rotateX(0deg) rotateY(-40deg) rotateZ(0deg) skew(0deg,1deg);
+	}
+	.wenzi:hover:after{
+		transform:scale(1.1,1.1) rotateX(0deg) rotateY(40deg) rotateZ(0deg) skew(0deg,20deg);
+	}
+	</style>
+</head>
+<body>
+	<span class="wenzi" data-wenzi="翻">翻</span>
+	<span class="wenzi" data-wenzi="转">转</span>
+	<span class="wenzi" data-wenzi="文">文</span>
+	<span class="wenzi" data-wenzi="字">字</span>
+</body>
+</html>
